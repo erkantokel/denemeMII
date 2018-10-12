@@ -1,0 +1,152 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "com.asas.mes",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.asas.mes.view.app",
+			"type": "XML"
+		},
+		"config": {
+			"fullWidth": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"routing" :{
+				"config":{
+					"routerClass":"sap.m.routing.Router",
+					"viewType":"XML",
+					"viewPath":"com.asas.mes.view",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"routes":[
+					{
+						"pattern":"",
+						"name":"vi",
+						"target":"main"
+					},
+					{
+						"pattern":"main",
+						"name":"main",
+						"target":"main"
+					},
+					{
+						"pattern":"Home",
+						"name":"Home",
+						"target":"Home"
+					},
+					{
+						"pattern":"DowntimeReport",
+						"name":"DowntimeReport",
+						"target":"DowntimeReport"
+					},
+                                                       {
+						"pattern":"OnlineMachineMonitor",
+						"name":"OnlineMachineMonitor",
+						"target":"OnlineMachineMonitor"
+					},
+					 {
+						"pattern":"ShiftPlan",
+						"name":"ShiftPlan",
+						"target":"ShiftPlan"
+					},
+					 {
+						"pattern":"Picos",
+						"name":"Picos",
+						"target":"Picos"
+					}
+		],
+		"targets":{
+			"main":{
+				"viewName":"Main",
+				"controlAggragation":"pages"
+			},
+			"Home":{
+				"viewName":"Home",
+				"controlAggragation":"pages"
+			},
+			"DowntimeReport":{
+				"viewName":"DowntimeReport",
+				"controlAggragation":"pages"
+			},
+                                           "OnlineMachineMonitor":{
+				"viewName":"OnlineMachineMonitor",
+				"controlAggragation":"pages"
+			},
+                                           "ShiftPlan":{
+				"viewName":"ShiftPlan",
+				"controlAggragation":"pages"
+			},
+                                           "Picos":{
+				"viewName":"Picos",
+				"controlAggragation":"Picos"
+			}
+
+
+		}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.asas.mes.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

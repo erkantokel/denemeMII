@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+ <style type="text/css">
+    body, html {
+	
+      font-family: sans-serif;
+    }
+.auto-style1 {
+	margin-top: 1px;
+}
+
+.vis-item.gray {
+      background-color:  rgb(221, 221, 221) ;
+     height:80px;
+    }
+
+.vis-item.Red {
+      background-color: #FF0000 ;
+     height:50px;
+    }
+
+.vis-item.Green {
+      background-color: rgb(46,204,113);
+     height:50px;
+    }
+
+.vis-item.DeepLilac {
+      background-color: rgb(155, 89, 182);
+     height:50px;
+    }
+
+.vis-item.Tomato {
+background-color: #ff7600;
+height:50px;
+    }
+
+.vis-item.DodgerBlue {
+background-color: DodgerBlue;
+height:50px;
+    }
+
+.vis-item.cinnabar{
+background-color: #e74c3c;
+height:50px;
+    }
+
+.vis-item.curiousblue{
+background-color: #3498db;
+height:50px;
+    }
+
+.vis-item.studio{
+background-color: #8e44ad;
+height:50px;
+    }
+
+
+.vis-item.buttercup{
+background-color: #f39c12;
+height:50px;
+    }
+
+
+.vis-item.mariner{
+background-color: #2980b9;
+height:50px;
+    }
+
+.vis-item.shamrock{
+background-color: #2ecc71;
+height:50px ;
+    }
+
+.vis-item.pickledbluewood{
+background-color: #34495e;
+height:50px;
+    }
+
+.vis-item.tallpoppy{
+background-color: #c0392b;
+height:50px;
+    }
+
+.vis-timeline vis-bottom{
+width: 1000px;
+}
+
+
+
+
+.vis-item.itemover{
+background-color: black;
+border-color: black;
+}
+
+    .vis-item.vis-selected.red {
+      /* custom colors for selected orange items */
+      background-color: orange;
+      border-color: orangered;
+    }
+
+    .vis-item:hover {
+border-color: black;
+box-shadow: 15px 15px 30px rgba(128,128,128, 0.5);
+    }
+
+.cell{
+background-color: DarkCyan;
+}
+
+.column {
+            background-color: #F0FFFF;
+            color: black;
+            font-weight: bold;
+        }
+	
+
+.vis-timeline{
+
+
+background:white;
+
+
+}
+
+ .vis-time-axis .vis-grid.vis-minor {
+      border-width: 2px;
+
+    } 
+.vis-timeline.vis-bottom{
+
+border:0px;
+height: 140px;
+}
+.vis-background{
+
+/*display:none;*/
+}
+
+
+.table{
+margin-left: auto;
+margin-right: auto;
+width: 95%;
+}
+
+.table-item{
+width:100%; 
+height: 20px; 
+font-size:20px; 
+text-align: left;
+ color:white; 
+font:caption;
+}
+
+.table-title{
+box-shadow:15px 15px 30px rgba(128,128,128, 0.5);
+border:1px;
+margin-left: auto;
+margin-right: auto;
+width: 95%;
+background: rgb(52, 152, 219);
+color:white;
+font-size:30px; 
+font:caption;
+}
+
+
+.table2{
+box-shadow:15px 15px 30px rgba(128,128,128, 0.5);
+border:1px;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+background: rgb(52, 152, 219);
+color:white;
+font-size:30px; 
+font:caption;
+}
+
+.vis-text.vis-major.vis-today
+{
+left:45px;
+}
+
+.jqx-layout-group-auto-hide-content-vertical
+{
+    width: 200px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows:200px 4em 20px;
+margin-left: auto;
+margin-right: auto;
+width: 95%;
+column-gap: 1%;
+}
+
+
+.grid-item {
+text-align: center;
+height: 330px;
+width: 98%;
+box-shadow: 5px 5px 20px rgba(128,128,128, 0.5);
+border:0px;
+background:white;
+color:#5C5C5C; 
+}
+
+
+
+.button {
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #ff9800;
+  border: none;
+  box-shadow: 0 9px #999;
+    width: 120px;
+}
+
+.button:hover {background-color: #ffc46b}
+
+
+
+.combobox{
+width: 150px;
+ display:none;
+ color:#5C5C5C; 
+font-family: Roboto,sans-serif; 
+width: 345px;
+border: 0px; 
+font-size:20px;
+}
+
+.text{
+width: 550px;
+ font-size: 21px;
+ font-weight: 550;
+ border:0px;
+ background:none;
+ color:gray; 
+text-align:right;
+ font-family: Roboto,sans-serif;
+}
+
+.label{
+width: 104px;  
+font-size: 17px; 
+font-weight: 400; 
+color:#5C5C5C; 
+font-family: Roboto,sans-serif;
+margin-right: 15px;
+
+}
+
+.cycles {
+    border-color: white;
+    width: 26px;
+    font-size: 15px;
+    background-color: white; 
+}
+.contact {
+    border-color: white;
+    width: 50px;
+    font-size: 15px;
+    background-color: white; 
+}
+
+.selectmenu{
+
+    font-size: 15px;
+    width: 152px;
+    padding: .25em;
+    border: 0;
+    border-bottom: 2px solid currentcolor;
+    letter-spacing: .15em;
+
+}
+
+
+
+
+#Machine option{
+   font-size: 15px;
+}
+
+.ui-widget-content{
+    border: 1px solid #dddddd;
+    background: #ff0101;
+    color: #333333;
+}
+
+
+
+
+
+
+  </style>
+
+
+
+        <meta charset="utf-8">
+        <title>SAPUI5 single file template | nabisoft</title>
+        <!-- decide what version you want to use, see http://scn.sap.com/community/developer-center/front-end/blog/2015/07/30/multi-version-availability-of-sapui5:
+        <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        <script src="https://sapui5.hana.ondemand.com/1.28.28/resources/sap-ui-core.js"
+        <script src="https://openui5beta.hana.ondemand.com/resources/sap-ui-core.js"
+        <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+        <script src="https://openui5.hana.ondemand.com/1.36.12/resources/sap-ui-core.js"
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<script type="text/javascript" src="/XMII/CM/mes/jqwidgets/jqwidgets/jqxgrid.edit.js"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/jquery.ui.datepicker-tr.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/jquery.validationEngine-tr.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/IE/libary.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/IE/miixml.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/UtilityFunctions.js.irpt" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/Message.js.irpt" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="/XMII/CM/mes/JSFiles/TransactionRunner.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/XMII/CM/mes/jqwidgets/scripts/mii-libary.js"></script>
+<script type="text/javascript" src="/XMII/CM/mes/jqwidgets/jqwidgets/jqx-all.js"></script>
+
+<script src="/XMII/CM/mes/JSFiles/jquery-1.12.4.js"></script>
+<script src="/XMII/CM/mes/JSFiles/jquery-ui.js"></script>
+<link href="/XMII/CM/mes/JSFiles/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+
+<link href="/XMII/CM/mes/jqwidgets/CSS/CSS/functionality.css" rel="stylesheet" type="text/css"/>
+<script src="/XMII/CM/mes/vis-4.21.0/vis.min.js"></script>
+
+<link href="/XMII/CM/mes/vis-4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+<link href="/XMII/CM/mes/test/TEST/site.css" rel="stylesheet" type="text/css" />
+
+
+
+ <script type="text/javascript" src="/XMII/CM/mes/jqwidgets-ver5.7.2/jqwidgets/jqxdatetimeinput.js"></script>
+ <script type="text/javascript" src="/XMII/CM/mes/jqwidgets-ver5.7.2/jqwidgets/jqxcalendar.js"></script>
+
+<link rel="stylesheet" href="/XMII/CM/mes/jqwidgets/styles/jqx.base.css">
+<script src="/XMII/CM/mes/jqwidgets-ver5.7.2/jqwidgets/jqx-all.js"></script>
+
+
+
+
+
+        -->
+        <script src="https://openui5.hana.ondemand.com/1.36.12/resources/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-bindingSyntax="complex"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-preload="async"></script>
+            <!-- use "sync" or change the code below if you have issues -->
+ 
+        <!-- XMLView -->
+        <script id="myXmlView" type="ui5/xmlview">
+            <mvc:View
+                controllerName="MyController"
+                xmlns="sap.m"
+                xmlns:core="sap.ui.core"
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns:nabisoft="nabisoft.ui">
+ 
+                <!-- use our custom control, see below -->
+                <nabisoft:Headline text="SAPUI5 single file template using XMLViews, Controllers, Fragments and Custom Controls for bug illustrations, support requests or demos"/>
+ 
+                <Table
+                    id="myTable"
+                    growing="true"
+                    growingThreshold="10"
+                    growingScrollToLoad="true"
+                    busyIndicatorDelay="0">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Orders of ALFKI"/>
+                            <ToolbarSpacer/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="OrderID"/>
+                        </Column>
+                        <Column>
+                            <Text text="Order Date"/>
+                        </Column>
+                        <Column>
+                            <Text text="To Name"/>
+                        </Column>
+                        <Column>
+                            <Text text="Ship City"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <!-- filled via bindItems() in controller -->
+                    </items>
+                </Table>
+ 
+            </mvc:View>
+        </script>
+ 
+        <!-- XML Fragment -->
+        <script id="myXMLFragment" type="ui5/fragment">
+            <core:FragmentDefinition
+                xmlns="sap.m"
+                xmlns:core="sap.ui.core">
+                <ColumnListItem type="Active">
+                    <cells>
+                        <ObjectIdentifier title="{OrderID}"/>
+ 
+                        <Text
+                            text="{
+                                path:'OrderDate',
+                                type:'sap.ui.model.type.Date',
+                                formatOptions: { style: 'medium', strictParsing: true}
+                            }"/>
+ 
+                        <Text text="{ShipName}"/>
+ 
+                        <Text text="{ShipCity}"/>
+ 
+                    </cells>
+                </ColumnListItem>
+            </core:FragmentDefinition>
+        </script>
+ 
+        <script>
+            sap.ui.getCore().attachInit(function () {
+                "use strict";
+ 
+                //### Custom Control ###
+                // remove the first parameter in "real" apps
+                sap.ui.define("nabisoft/ui/Headline",[
+                    "sap/ui/core/Control"
+                ], function(Control) {
+                    "use strict";
+ 
+                    return Control.extend("nabisoft.ui.Headline", {
+                        metadata : {
+                            properties : {
+                                text: {type : "string"}
+                            },
+                            aggregations : { },
+                            associations : { },
+                            events : { }
+                        },
+ 
+                        init : function () { },
+ 
+                        renderer : function (oRM, oControl) {
+                            oRM.write("<h3");
+                            oRM.writeControlData(oControl);
+                            oRM.addClass("nabiUiHeadline");
+                            oRM.writeClasses();
+                            oRM.write(">");
+                            oRM.writeEscaped(oControl.getText());
+                            oRM.write("</h3>");
+                        }
+                    });
+                });
+ 
+                //### Controller ###
+                sap.ui.define([
+                    "sap/ui/core/mvc/Controller",
+                    "sap/ui/model/odata/v2/ODataModel"
+                ], function (Controller, ODataModel) {
+                    "use strict";
+ 
+                    return Controller.extend("MyController", {
+                        onInit : function () {
+                            this.getView().setModel(
+                                new ODataModel("https://cors-anywhere.herokuapp.com/services.odata.org/V2/Northwind/Northwind.svc/", {
+                                    json : true,
+                                    useBatch : false
+                                })
+                            );
+ 
+                            var sPath = "/Customers('ALFKI')/Orders";
+                            var oTable = this.byId("myTable");
+                            var oTemplate =  sap.ui.xmlfragment({
+                                fragmentContent : jQuery("#myXMLFragment").html()
+                            });
+ 
+                            oTable.bindItems(sPath, oTemplate, null /*oSorter*/, null /*aFilters*/);
+                        }
+                    });
+                });
+ 
+                //### THE APP: place the XMLView somewhere into DOM ###
+                sap.ui.xmlview({
+                    viewContent : jQuery("#myXmlView").html()
+                }).placeAt("content");
+ 
+            });
+        </script>
+ 
+    </head>
+ 
+    <body class="sapUiBody">
+<table class="table-title">
+
+<tr>
+<td>
+<label style="width: 104px; font-size: 18px;" >Date</label></td>
+   <td>     <div style="  width: 150px; height: 17px;"  id='dateInput'>
+        </div></td>
+</tr>
+
+<br></br>
+    <tr>
+               <td style="width: 104px; height: 20px; font-size: 18px;" >Machine</td>
+               <td>
+                  <select class="selectmenu"     name="Machine" id="Machine" onchange="selectMachine()">
+                     <option value="P12MN">P12MN</option>
+                     <option value="P13MN">P13MN</option>
+                     <option value="P16MN">P16MN</option>
+                     <option value="P22MN">P22MN</option>
+                     <option value="P27MN">P27MN</option>
+                     <option value="P35MN">P35MN</option>
+                     <option value="P55MN">P55MN</option>
+		<option value="MAZAK_1">MAZAK_1</option>
+<option value="MAZAK_2">MAZAK_2</option>
+<option value="MAZAK_3">MAZAK_3</option>
+<option value="MAZAK_4">MAZAK_4</option>
+<option value="MAZAK_5">MAZAK_5</option>
+<option value="MAZAK_10">MAZAK_10</option>
+<option value="MAZAK_11">MAZAK_11</option>
+                  </select>
+               </td>
+            </tr>
+</table>
+
+<br></br>
+
+<table   class="table"  >
+<tr>
+<th class="table-item" style="background: rgb(243, 156, 18)" > Team A </th>
+</tr>
+<tr>
+<td style="background: white;  box-shadow: 15px 15px 30px rgba(128,128,128, 0.5)">
+ <div id="visualization1" align="right" >
+    <div class="menu">
+	<input class="contact " type="text" name="Contact1" value="" id="Contact1">
+        <label class="label" >Contact       </label>
+         <input class="cycles " type="text" name="Cycles1" value="" id="Cycles1">
+        <label class="label" >Cycles</label>
+    </div>
+</div>
+</td>
+</tr>
+</table>
+
+<br></br>
+
+<table   class="table"  >
+<tr>
+<th class="table-item" style="background: rgb(39, 174, 96)"> Team B </th>
+</tr>
+<tr>
+<td style="background: white; box-shadow: 15px 15px 30px rgba(128,128,128, 0.5) ">
+ <div id="visualization2" align="right" >
+ <div class="menu">
+	<input class="contact " type="text" name="Contac2t" value="" id="Contact2">
+        <label class="label" >Contact      </label>
+         <input class="cycles " type="text" name="Cycles2" value="" id="Cycles2">
+        <label class="label" >Cycles</label>
+    </div>
+
+
+</div>
+</td>
+</tr>
+</table>
+
+<br></br>
+
+
+<table   class="table"  >
+<tr>
+<th class="table-item" style="background: rgb(41, 128, 185)"> Team C </th>
+</tr>
+<tr>
+<td style="background: white; box-shadow: 15px 15px 30px rgba(128,128,128, 0.5) ">
+ <div id="visualization3"  align="right" >
+ <div class="menu">
+	<input class="contact " type="text" name="Contact3" value="" id="Contact3">
+        <label class="label" >Contact       </label>
+         <input class="cycles " type="text" name="Cycles3" value="" id="Cycles3">
+        <label class="label" >Cycles</label>
+    </div>
+</div>
+</td>
+</tr>
+</table>
+
+
+<br></br>
+<br></br>
+
+
+ <div  class="grid-container">
+  <div class="grid-item"   id="jqxgrid"  ></div>
+  <div class="grid-item" >
+
+<table width="100%" >
+<tr>
+<td align="left" >
+<label class="label" >Start Time</label></td>
+<td align="right" ><input  class="text"  type="text" name="Start" id="Start" /></td>
+</tr>
+
+<tr>
+<td align="left">
+<label class="label" >End Time</label></td>
+<td align="right"><input  class="text" type="text" name="End" id="End" />
+</td>
+</tr>
+
+<tr>
+<td align="left">
+<label class="label" >Duration</label></td>
+<td  align="right"><input  class="text" type="text"  name="Duration" id="Duration" />
+</td>
+</tr>
+
+
+<tr>
+<td align="left">
+<label class="label" >Group</label></td>
+<td  align="right" ><input  class="text"  type="text" name="Grouptext" id="Grouptext" />                  
+<select class="combobox"  align="left" name="Groupcombo"   id="Groupcombo" required="required" > </select>				  
+</td>
+</tr>
+
+<tr>
+<td align="left">
+<label class="label" >Reason</label></td>
+<td  align="right" ><input  class="text"  type="text" name="Reasontext" id="Reasontext" />                
+ <select class="combobox" align="left" name="Reasoncombo"   id="Reasoncombo" required="required"  > </select>			   
+</td>
+</tr>
+
+
+<tr>
+<td align="left">
+<label class="label" >Comment</label></td>
+<td  align="right" ><input  class="text" type="text" name="Commenttext" id="Commenttext" /> 
+ <input style="display:none;"  type="text" class='text' name="SelectedID" id="SelectedID" />
+ <select class="combobox" align="left" name="Commentcombo"   id="Commentcombo" required="required" > </select>			  
+</td>
+</tr>
+
+
+<tr  >
+
+<div id="time-range">
+    <p>Split Downtime <span style="background-color:#ff3838; color:white;"  class="slider-time" id="sliderTime"></span> </span>
+    </p>
+    
+    <div  class="sliders_step1">
+        <div style="background-color:#d2fdfd;"     id="slider-range"></div>
+    </div>
+</div> 
+
+</tr>
+
+
+
+<tr>
+<td>
+</td>
+<td  align="right">
+<input  style="display:none; background-color:#2980b9;"  onclick="split()" class="button"  value="Split" id="Splitbutton" class='button' type="button"  />
+<input class="button"  value="Change" id="Changebutton" class='button' type="button"  />
+<input  style="display:none; background-color:#27ae60;" class="button"  value="Save" id="Savebutton" class='button' type="button" onclick="Update()"  />
+<input  style="background-color:#ff3838;"  class="button"  value="Cancel" id="Cancelbutton" class='button' type="button"  />
+</td>
+</tr>
+
+</table>
+</div>
+
+
+
+
+</div>
+
+
+<p id="demo"></p>
+
+
+<script language="javascript" type="text/javascript" charset="utf-8">
+
+var selectedID=0;
+
+function zeroPad(num, places) {
+  var zero = places - num.toString().length + 1;
+  return Array(+(zero > 0 && zero)).join("0") + num;
+}
+function formatDT(__dt) {
+    var year = __dt.getFullYear();
+    var month = zeroPad(__dt.getMonth()+1, 2);
+    var date = zeroPad(__dt.getDate(), 2);
+    var hours = zeroPad(__dt.getHours(), 2);
+    var minutes = zeroPad(__dt.getMinutes(), 2);
+    var seconds = zeroPad(__dt.getSeconds(), 2);
+    return year + '-' + month + '-' + date + ' ' + hours + ':' + minutes + ':' + seconds;
+};
+
+function split(){
+
+          
+           var GroupID = document.getElementById("Groupcombo").value;
+	  var CodeID = document.getElementById("Reasoncombo").value;
+	var CommentID = document.getElementById("Commentcombo").value;
+	var splitDate = document.getElementById("sliderTime").innerHTML;
+
+	var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/SPLIT/INS_SPLIT_TRNS");
+	  tRunner.AddParameter("I_ID", selectedID);
+	  tRunner.AddParameter("I_SPLITDATE", splitDate );
+	  tRunner.AddParameter("I_GROUP", GroupID);
+	  tRunner.AddParameter("I_CODE", CodeID);
+	  tRunner.AddParameter("I_COMMENT", CommentID);
+
+
+	
+   
+	var output = '';
+
+	if (!tRunner.Execute()) {
+
+		alert("Program İşlenmesinde hata oluştu")
+		
+            	return {};
+	}
+
+	if(SelectedTimeline=="1"){
+		
+	loadtable1();
+
+	}
+
+	if(SelectedTimeline=="2"){
+		
+	loadtable2();
+
+	}
+
+	if(SelectedTimeline=="3"){
+		
+	loadtable3();
+
+	}
+
+};
+
+
+FillGroup();
+
+var SelectedTimeline="";
+
+$('#Groupcombo').on('change', function (e) {
+Reasoncombo.options.length=0; 
+Commentcombo.options.length=0; 
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+  FillReason(valueSelected);
+
+}); 
+
+
+
+$('#Reasoncombo').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+  FillComment(valueSelected);
+}); 
+
+$('#Changebutton').on('click', function (e) {
+FillReason("1");
+
+
+document.getElementById("Reasoncombo").style.display = "inherit";
+document.getElementById("Commentcombo").style.display = "inherit"
+document.getElementById("Groupcombo").style.display = "inherit";
+
+
+
+document.getElementById("Reasontext").style.display = "none";
+document.getElementById("Grouptext").style.display = "none";
+document.getElementById("Commenttext").style.display = "none";
+
+
+document.getElementById("Splitbutton").style.display = "inherit";
+document.getElementById("Changebutton").style.display = "none";
+document.getElementById("Savebutton").style.display = "inherit";
+
+}); 
+
+
+
+
+$('#Savebutton').on('click', function (e) {
+document.getElementById("Reasoncombo").style.display = "none";
+document.getElementById("Commentcombo").style.display = "none"
+document.getElementById("Groupcombo").style.display = "none";
+
+
+
+document.getElementById("Reasontext").style.display = "inherit";
+document.getElementById("Grouptext").style.display = "inherit";
+document.getElementById("Commenttext").style.display = "inherit";
+
+
+
+document.getElementById("Changebutton").style.display = "inherit";
+document.getElementById("Savebutton").style.display = "none";
+
+}); 
+
+$('#Cancelbutton').on('click', function (e) {
+document.getElementById("Reasoncombo").style.display = "none";
+document.getElementById("Commentcombo").style.display = "none"
+document.getElementById("Groupcombo").style.display = "none";
+
+
+
+document.getElementById("Reasontext").style.display = "inherit";
+document.getElementById("Grouptext").style.display = "inherit";
+document.getElementById("Commenttext").style.display = "inherit";
+
+
+document.getElementById("Splitbutton").style.display = "none";
+document.getElementById("Changebutton").style.display = "inherit";
+document.getElementById("Savebutton").style.display = "none";
+
+}); 
+
+
+
+
+
+
+
+function Update(){
+
+
+          var ID = document.getElementById("SelectedID").value;
+          var CodeID = document.getElementById("Reasoncombo").value;
+           var GroupID = document.getElementById("Groupcombo").value;
+	var CommentID = document.getElementById("Commentcombo").value;
+
+	var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/DOWNTIME_REASON/UPDATE_REASON/UPD_DOWNTIME_REASON_TRNS");
+	  tRunner.AddParameter("I_ID", ID );	
+	 tRunner.AddParameter("I_GROUPID", GroupID);
+tRunner.AddParameter("I_CODEID", CodeID);
+	tRunner.AddParameter("I_COMMENTID", CommentID);
+	var output = '';
+
+	if (!tRunner.Execute()) {
+
+		alert("Program İşlenmesinde hata oluştu")
+		
+            	return {};
+	}
+
+	if(SelectedTimeline=="1"){
+		
+	loadtable1();
+
+	}
+
+	if(SelectedTimeline=="2"){
+		
+	loadtable2();
+
+	}
+
+	if(SelectedTimeline=="3"){
+		
+	loadtable3();
+
+	}
+
+}
+
+setInterval(function(){
+
+loadtable1();
+loadtable2();
+loadtable3();
+
+
+},60000) //1000 for every 10 sec.
+
+
+function FillReason(index1){
+		
+	Reasoncombo.options.length=0; 
+
+	var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/DOWNTIME_REASON/DOWNTIME_CODE/SLC_DOWNTINE_CODE_TRNS");
+	
+	 tRunner.AddParameter("I_GROUPID", index1);
+	var output = '';
+
+	if (!tRunner.Execute()) {
+
+		alert("Program İşlenmesinde hata oluştu")
+		
+            	return {};
+	}
+
+	var data = tRunner.GetJSONData();
+	var $select = $('#Reasoncombo');
+
+	$.each(data, function(index, value){    
+     		$.each(value.Row, function(itemidx, item){    
+			$select.append('<option value=' + item.ID + '>' + item.CODE + '</option>');
+           		 });
+ 	});
+}
+
+function FillGroup(){
+
+
+	var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/DOWNTIME_REASON/DOWNTIME_GROUP/SLC_DOWNTINE_GROUP_TRNS");
+   
+	var output = '';
+
+	if (!tRunner.Execute()) {
+
+		alert("Program İşlenmesinde hata oluştu")
+		
+            	return {};
+	}
+
+	var data = tRunner.GetJSONData();
+	var $select = $('#Groupcombo');
+
+	$.each(data, function(index, value){    
+     		$.each(value.Row, function(itemidx, item){    
+			$select.append('<option value=' + item.ID+ '>' + item.GROUP + '</option>');
+           		 });
+ 	});
+}
+
+function FillComment(index2){
+
+
+
+             Commentcombo.options.length=0; 
+
+	var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/DOWNTIME_REASON/DOWNTIME_COMMENT/SLC_DOWNTINE_COMMENT_TRNS");
+               tRunner.AddParameter("I_CODEID", index2);
+	var output = '';
+
+	if (!tRunner.Execute()) {
+
+		alert("Program İşlenmesinde hata oluştu")
+		
+            	return {};
+	}
+
+	var data = tRunner.GetJSONData();
+	var $select = $('#Commentcombo');
+
+	$.each(data, function(index, value){    
+     		$.each(value.Row, function(itemidx, item){    
+			$select.append('<option value=' + item.ID + '>' + item.COMMENT + '</option>');
+           		 });
+ 	});
+}
+
+
+
+
+var selecteddate = new Date() ;
+var selectedyear;
+var selectemonth;
+var selectedday;
+
+
+var datetime = + selecteddate.getFullYear() + "-"
+                + (selecteddate.getMonth()+1)  + "-" 
+               + selecteddate.getDate() ;
+var sMachine="P12MN";
+
+ $(document).ready(function () {               
+                // Create a jqxDateTimeInput
+                $("#dateInput").jqxDateTimeInput({ width: '150px', height: '17px' });
+        		
+            });
+
+
+ $("#dateInput").on('valueChanged', function (event) {
+          
+
+
+var date = $("#dateInput").jqxDateTimeInput('getDate');
+
+/*selecteddate = $.jqx.dataFormat.formatdate(date, 'yyyy-MM-dd'); */
+selectedyear = $.jqx.dataFormat.formatdate(date, 'yyyy'); 
+selectedmonth = $.jqx.dataFormat.formatdate(date, 'MM'); 
+selectedday = $.jqx.dataFormat.formatdate(date, 'dd'); 
+              
+datetime = + selectedyear + "-"
+                + selectedmonth  + "-" 
+               + selectedday ;
+         
+loadtable1();
+loadtable2();
+loadtable3();
+loadgrid();
+            });
+
+
+
+/*window.setInterval("loadtable1()",5000);
+window.setInterval("loadtable2()",5000);
+window.setInterval("loadtable3()",5000);*/
+
+
+
+  var container1 = document.getElementById('visualization1');
+  var container2 = document.getElementById('visualization2');
+  var container3 = document.getElementById('visualization3');
+
+
+
+  var items1 = new vis.DataSet([
+  ]);
+ var options1 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+        start: datetime+' '+' 00:00:00',
+        end: datetime+' '+ '08:00:00',
+         editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+        zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 *   16 * 31 * 1,
+	min: datetime+' '+' 00:00:00',
+	max:datetime+' '+ '08:00:00'
+    };
+
+   
+
+  var items2 = new vis.DataSet([
+  ]);
+
+
+    var options2 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+        start: datetime+' '+' 08:00:00',
+        end: datetime+' '+ '16:00:00',
+        editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+         zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 *   16 * 31 * 1,
+         min: datetime+' '+' 08:00:00',
+         max:datetime+' '+ '16:00:00'
+
+
+    };
+
+  var items3 = new vis.DataSet([
+  ]);
+
+
+    var options3 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+        start: datetime+' '+' 16:00:00',
+        end: datetime+' '+ '23:59:59',
+        editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+      zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 *   16 * 31 * 1,
+min: datetime+' '+' 16:00:00',
+         max:datetime+' '+ '23:59:59'
+        
+
+    };
+
+  var timeline1 = new vis.Timeline(container1, items1, options1);
+
+  loadtable1();
+loadgrid();
+
+
+
+
+
+  function loadtable1(){
+
+
+options1 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+        start: datetime+' '+' 00:00:00',
+        end: datetime+' '+ '08:00:00',
+        editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 * 16 * 31 * 1,
+min: datetime+' '+' 00:00:00',
+	max:datetime+' '+ '08:00:00'
+    };
+
+
+
+
+timeline1.setOptions(options1);
+
+
+
+ items1.clear();
+
+  var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/T_DOWNTIME");
+  tRunner.AddParameter("I_STARTTIME", "00:00.00");
+  tRunner.AddParameter("I_ENDTIME", "08:00:00");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+  tRunner.AddParameter("I_DATE", datetime);
+
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var data = tRunner.GetJSONData();
+  data = data[0].Row;
+ items1.add(data);
+
+
+  var tRunner = new TransactionRunner("mes/REPORT/EXTRUSIONCONTACT/GET_CONTACTCYCLE_TRNS");
+  tRunner.AddParameter("I_STARTTIME", "00:00.00");
+  tRunner.AddParameter("I_ENDTIME", "08:00:00");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+  tRunner.AddParameter("I_DATE", datetime);
+
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var dataCycle = tRunner.GetJSONData();
+dataCycle = dataCycle[0].Row;
+
+ document.getElementById("Cycles1").value = dataCycle[0].CYCLE;
+ document.getElementById("Contact1").value = dataCycle[0].CONTACT+'%';
+
+
+}
+
+
+
+  var timeline2 = new vis.Timeline(container2, items2, options2);
+  loadtable2();
+
+  function loadtable2(){
+
+options2 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+         start: datetime+' '+' 08:00:00',
+        end: datetime+' '+ '16:00:00',
+        editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+  zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 *   16 * 31 * 1,
+min: datetime+' '+' 08:00:00',
+         max:datetime+' '+ '16:00:00'
+
+    };
+
+timeline2.setOptions(options2);
+ items2.clear();
+
+  var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/T_DOWNTIME");
+  tRunner.AddParameter("I_STARTTIME", "08:00.00");
+  tRunner.AddParameter("I_ENDTIME", "16:00:00");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+ tRunner.AddParameter("I_DATE", datetime);
+
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var data = tRunner.GetJSONData();
+  data = data[0].Row;
+ items2.add(data);
+
+var tRunner = new TransactionRunner("mes/REPORT/EXTRUSIONCONTACT/GET_CONTACTCYCLE_TRNS");
+  tRunner.AddParameter("I_STARTTIME", "08:00.00");
+  tRunner.AddParameter("I_ENDTIME", "16:00:00");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+  tRunner.AddParameter("I_DATE", datetime);
+
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var dataCycle = tRunner.GetJSONData();
+dataCycle = dataCycle[0].Row;
+
+ document.getElementById("Cycles2").value = dataCycle[0].CYCLE;
+ document.getElementById("Contact2").value = dataCycle[0].CONTACT+'%';
+
+}
+
+
+  var timeline3 = new vis.Timeline(container3, items3, options3);
+  loadtable3();
+
+  function loadtable3(){
+
+options3 = {
+        margin: {
+            item: {
+                horizontal: -1,
+                
+            }
+        },
+        start: datetime+' '+' 16:00:00',
+        end: datetime+' '+ '23:59:59',
+        editable: false,
+        moveable: true,
+        zoomable:true,
+        showCurrentTime:false,
+        timeAxis: {scale: 'minute', step: 30},
+        tooltip:{followMouse:true},
+        width: '98%',
+    zoomMin: 1000 * 60,
+        zoomMax: 1000 * 60 *   16 * 31 * 1,
+min: datetime+' '+' 16:00:00',
+         max:datetime+' '+ '23:59:59'
+
+    };
+
+
+
+
+timeline3.setOptions(options3);
+
+
+
+
+
+ items3.clear();
+
+  var tRunner = new TransactionRunner("mes/DOWNTIME/DOWNTIME/T_DOWNTIME");
+  tRunner.AddParameter("I_STARTTIME", "16:00.00");
+  tRunner.AddParameter("I_ENDTIME", "23:59:59");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+ tRunner.AddParameter("I_DATE", datetime);
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var data = tRunner.GetJSONData();
+ data = data[0].Row;
+ items3.add(data);
+
+var tRunner = new TransactionRunner("mes/REPORT/EXTRUSIONCONTACT/GET_CONTACTCYCLE_TRNS");
+  tRunner.AddParameter("I_STARTTIME", "16:00.00");
+  tRunner.AddParameter("I_ENDTIME", "23:59:59");
+  tRunner.AddParameter("I_MACHINE", sMachine);
+  tRunner.AddParameter("I_DATE", datetime);
+
+  var output = '';
+  if (!tRunner.Execute()) {
+      alert("Program İşlenmesinde hata oluştu");
+      return {};
+  }
+
+ var dataCycle = tRunner.GetJSONData();
+dataCycle = dataCycle[0].Row;
+
+ document.getElementById("Cycles3").value = dataCycle[0].CYCLE;
+ document.getElementById("Contact3").value = dataCycle[0].CONTACT+'%';
+
+
+
+}
+
+
+ function selectMachine(){
+
+    sMachine = document.getElementById("Machine").value;
+    loadtable1();
+    loadtable2();
+    loadtable3();
+     loadgrid();
+  }
+
+
+function loadgrid(){
+var url ="http://10.54.1.74:50000/XMII/Illuminator?QueryTemplate=mes/DOWNTIME/DOWNTIME/TOP5DOWNTIME&Param.1="+sMachine+"&Param.2="+datetime+"&Content-Type=text/xml";
+
+
+$(document).ready(function ()
+{
+        // prepare the data
+          
+            var source =
+            {
+
+                datatype: "xml",
+                datafields:
+                [
+                    { name: 'DTCODE', type: 'string' },
+                    { name: 'MINUTES', type: 'string' },
+                    { name: 'COUNT', type: 'string' },
+		 { name: 'PERCENTAGE', type: 'string' }
+                ],
+	     root: "Rowset",
+                 record: "Row",
+                 url: url,
+                 async: false
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+       
+            $("#jqxgrid").jqxGrid(
+            {
+                width: '100%',
+                height: '100%',
+                source: dataAdapter,
+                columnsresize: true,
+                columns: [
+                  { text: 'Time Loss (Top 5)', datafield: 'DTCODE', width:'40%' },
+                  { text: 'Minutes', datafield: 'MINUTES', width: '20%' },
+                  { text: 'Count', datafield: 'COUNT', width:'20%'},
+	      { text: 'Percentage [%]', datafield: 'PERCENTAGE', width:'20%'}
+                ]
+            });
+});
+
+
+}
+
+
+
+
+timeline1.on('select', function (properties) {
+
+
+
+ timeline2.setSelection([-1]);
+
+ timeline3.setSelection([-1]);
+
+
+var item1 = items1.get(properties.items)
+selectedID=item1[0].id
+var start = item1[0].start;
+
+var end = item1[0].end;
+
+var duration = item1[0].title;
+var reason = item1[0].reason;
+var comment = item1[0].comment;
+var group = item1[0].group;
+
+var dt_from = start;
+var dt_to = end;
+
+$('.slider-time').html(dt_from);
+$('.slider-time2').html(dt_to);
+var min_val = Date.parse(dt_from)/1000;
+var max_val = Date.parse(dt_to)/1000;
+
+
+$("#slider-range").slider({
+    range: false,
+    min: min_val,
+    max: max_val,
+    step: 6,
+    values: [min_val],
+    slide: function (e, ui) {
+        var dt_cur_from = new Date(ui.values[0]*1000); //.format("yyyy-mm-dd hh:ii:ss");
+        $('.slider-time').html(formatDT(dt_cur_from));
+
+       
+    }
+});
+
+
+
+var id = item1[0].id;
+
+if(reason=="---")
+{
+timeline1.setSelection([-1]);
+return;
+}
+
+
+ document.getElementById("Start").value = start;
+document.getElementById("End").value = end;
+document.getElementById("Duration").value = duration;
+document.getElementById("Reasontext").value = reason;
+document.getElementById("Grouptext").value = group;
+document.getElementById("Commenttext").value = comment;
+document.getElementById("SelectedID").value = id;
+SelectedTimeline="1";
+    });
+
+timeline2.on('select', function (properties) {
+ timeline1.setSelection([4]);
+
+ timeline3.setSelection([4]);
+
+
+var item1 = items2.get(properties.items)
+selectedID=item1[0].id
+var start = item1[0].start;
+dt_from=start;
+var end = item1[0].end;
+dt_to=end;
+var duration = item1[0].title;
+var reason = item1[0].reason;
+var comment = item1[0].comment;
+var group = item1[0].group;
+var id = item1[0].id;
+
+var dt_from = start;
+var dt_to = end;
+
+$('.slider-time').html(dt_from);
+$('.slider-time2').html(dt_to);
+var min_val = Date.parse(dt_from)/1000;
+var max_val = Date.parse(dt_to)/1000;
+
+
+$("#slider-range").slider({
+    range: false,
+    min: min_val,
+    max: max_val,
+    step: 6,
+    values: [min_val],
+    slide: function (e, ui) {
+        var dt_cur_from = new Date(ui.values[0]*1000); //.format("yyyy-mm-dd hh:ii:ss");
+        $('.slider-time').html(formatDT(dt_cur_from));
+
+       
+    }
+});
+
+
+
+
+
+
+
+SelectedTimeline="2";
+
+if(reason=="---")
+{
+timeline2.setSelection([-1]);
+return;
+}
+
+ document.getElementById("Start").value = start;
+document.getElementById("End").value = end;
+document.getElementById("Duration").value = duration;
+document.getElementById("Reasontext").value = reason;
+document.getElementById("Grouptext").value = group;
+document.getElementById("Commenttext").value = comment;
+
+document.getElementById("SelectedID").value = id;
+    });
+
+timeline3.on('select', function (properties) {
+
+ timeline2.setSelection([4]);
+
+ timeline1.setSelection([4]);
+
+var item1 = items3.get(properties.items)
+selectedID=item1[0].id
+var start = item1[0].start;
+var end = item1[0].end;
+var duration = item1[0].title;
+var reason = item1[0].reason;
+var comment = item1[0].comment;
+var group = item1[0].group;
+var id = item1[0].id;
+SelectedTimeline="3";
+
+var dt_from = start;
+var dt_to = end;
+
+$('.slider-time').html(dt_from);
+$('.slider-time2').html(dt_to);
+var min_val = Date.parse(dt_from)/1000;
+var max_val = Date.parse(dt_to)/1000;
+
+
+$("#slider-range").slider({
+    range: false,
+    min: min_val,
+    max: max_val,
+    step: 6,
+    values: [min_val],
+    slide: function (e, ui) {
+        var dt_cur_from = new Date(ui.values[0]*1000); //.format("yyyy-mm-dd hh:ii:ss");
+        $('.slider-time').html(formatDT(dt_cur_from));
+
+       
+    }
+});
+
+
+
+
+
+
+
+
+
+if(reason=="---")
+{
+timeline3.setSelection([-1]);
+return;
+}
+
+ document.getElementById("Start").value = start;
+document.getElementById("End").value = end;
+document.getElementById("Duration").value = duration;
+document.getElementById("Reasontext").value = reason;
+document.getElementById("Grouptext").value = group;
+document.getElementById("Commenttext").value = comment;
+
+document.getElementById("SelectedID").value = id;
+    });
+
+
+
+
+
+  </script>
+
+
+
+
+
+<div id="tooltips" ></div>
+
+
+
+<div id="tooltips-follow"  ></div>
+
+
+
+<div id="tooltips-cap"></div>
+
+
+<div id="tooltips-hide"></div>        
+
+    </body>
+</html>

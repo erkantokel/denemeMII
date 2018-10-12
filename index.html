@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>   
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>ASAS MES</title>
+
+		<script id="sap-ui-bootstrap"
+			src="http://10.54.1.74:50000/sapui5-1.52/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"com.asas.mes": ""}'>
+		</script>
+
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script language="javascript" src="/XMII/CM/mes/JSFiles/TransactionRunner.js" type="text/javascript" charset="utf-8"></script>
+		<script language="javascript" src="/XMII/CM/mes/JSFiles/GetLoginName.js" type="text/javascript" charset="utf-8"></script>
+		<script language="javascript" src="/XMII/CM/mes/external_library/moment.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "com.asas.mes"
+					}),
+					appWidthLimited: false
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>
